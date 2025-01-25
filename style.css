@@ -1,0 +1,140 @@
+/*----------------------Fonts----------------------*/
+@font-face {
+	font-family: 'inter';
+	src: url('./fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+/*-------------------------------------------------*/
+
+/*----------------Global_variables----------------*/
+:root {
+	--White: hsl(0, 0%, 100%);
+	--Green: hsl(75, 94%, 57%);
+	--Grey_700: hsl(0, 0%, 20%);
+	--Grey_800: hsl(0, 0%, 12%);
+	--Grey_900: hsl(0, 0%, 8%);
+}
+/*------------------------------------------------*/
+
+/*-------------------Global_rules------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'inter';
+	color: var(--White);
+	text-align: center;
+}
+/*-------------------------------------------------*/
+
+
+/*--------------Mobile_view_(default)--------------*/
+body {
+	height: 100svh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--Grey_900);
+}
+
+.container {
+	width: 80%;
+	max-width: 350px;
+	background-color: var(--Grey_800);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px;
+	border-radius: 13px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.info img {
+	width: 90px;
+	border-radius: 100%;
+}
+
+.info h1 {
+	margin: 25px 0 8px;
+	font-size: 25px;
+}
+
+.info p:first-of-type {
+	color: var(--Green);
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.info p:last-of-type {
+	margin: 25px 0 5px;
+	font-size: 14px;
+}
+
+.links {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+}
+
+.links a {
+	height: 45px;
+	width: 100%;
+	font-weight: 600;
+	font-size: 15px;
+	margin-top: 12px;
+	border-radius: 8px;
+	border: none;
+	background-color: var(--Grey_700);
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.links a:hover{
+	background-color: var(--Green);
+	color: var(--Grey_700);
+}
+/*-------------------------------------------------*/
+
+/* -------------------51_area-------------------*/
+@media (max-width: 300px)
+{
+	.container {
+		position: relative;
+		display: none;
+	}
+
+	body::before {
+		position: absolute;
+		content: '';
+		background: url('./media/fin_ghadi.jpg') no-repeat center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 200px;
+		width: 250px;
+		background-size: cover;
+	}
+	
+	body::after {
+		position: absolute;
+		content: "";
+		width: 80%;
+		text-align: center;
+		font-size: 20px;
+		font-weight: 600;
+		top: 65%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+/*----------------------------------------------- */
